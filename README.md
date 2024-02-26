@@ -1,12 +1,41 @@
 # AML_NCCL_Test
 
-## Create AML env
+## Create Azure container registry
+- Create an Azure ACR
+```bash
+az acr create --name jzacr3 \
+              --resource-group JZ-ACR \
+              --location southcentralus \
+              --sku Standard \
+              --admin-enabled true \
+              --public-network-enabled true
+```
+- Check ACR properties
+```bash
+az acr show --name jzacr3 --resource-group JZ-ACR -o table
+```
+- Get ACR ID
+```bash
+az acr show --name jzacr3 --resource-group JZ-ACR --query id --output tsv
+```
+NOTE: You will need ACR ID in script `1_create_RG.sh`
+
+## Install AML Python SDK v2 in a conda env
 ```bash
 conda env create -f azureml_env.yml
 ```
+Activate the conda env
+```bash
+conda activate azureml
+```
+
+Alternatively, you can [install the SDK](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-ml-readme?view=azure-python) directly without conda. 
+```bash
+pip install azure-ai-ml
+pip install azure-identity
+```
 
 ## Steps to run this repo
-
 ```bash
 bash 1_create_RG.sh
 source 2_set_env.sh
