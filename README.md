@@ -71,7 +71,7 @@ Login Succeeded
 python 4_create_environment.py
 python 5_NCCL_test.py
 ```
-For a two-node NCCL test, you should see the cluster rescaling from 1 to 2 nodes for the job execution
+For a two-node NCCL test, you should see the cluster rescaling from 1 to 2 nodes for the job execution  
 ![image](https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp/assets/6353250/6b344a1f-0c3e-498d-bbdd-9b78cc3c06a6)
 
 
