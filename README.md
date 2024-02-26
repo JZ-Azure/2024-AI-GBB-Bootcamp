@@ -1,7 +1,7 @@
-# AML_NCCL_Test
+# AI-GBB-Bootcamp: AML hands-on
 
 ## Create Azure container registry
-- Create an Azure ACR
+- Create an Azure Container Registry
 ```bash
 az acr create --name jzacr3 \
               --resource-group JZ-ACR \
