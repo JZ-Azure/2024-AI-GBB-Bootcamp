@@ -76,7 +76,8 @@ For a two-node NCCL test, you should see the cluster rescaling from 1 to 2 nodes
 ![image](https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp/assets/6353250/2b1262db-2bf0-4a3e-9523-729415d0f3c2)
 
 You can monitor the results from the portal `Outputs + logs` tab  
-![image](https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp/assets/6353250/b93ba73e-e0c7-4a82-8eaf-9f6580d2d705)
+![image](https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp/assets/6353250/03280875-6e08-4988-baee-ff3d87914eec)
+
 
 ## NCCL `all_reduce` Results
 ### Single Node
