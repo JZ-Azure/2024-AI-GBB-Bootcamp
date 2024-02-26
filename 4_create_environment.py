@@ -16,7 +16,7 @@ ml_client = MLClient(DefaultAzureCredential(), subscription_id, resource_group, 
 env_name = "NCCL-Benchmark-Env"
 custom_env = Environment(
     name=env_name,
-    image='jzacr3.azurecr.io/pytorch_nccl_tests_2303:latest',
+    image='jzacr3.azurecr.io/aml_nccl_tests_2303:latest',
     version="1.0",
 )
 

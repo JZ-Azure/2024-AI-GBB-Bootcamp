@@ -35,11 +35,39 @@ pip install azure-ai-ml
 pip install azure-identity
 ```
 
-## Steps to run this repo
+## Create AML compute cluster
 ```bash
 bash 1_create_RG.sh
 source 2_set_env.sh
 python 3_create_cluster.py
+```
+Access the compute node using `ssh`:
+```bash
+$ ssh -i ~/.ssh/id_rsa azureuser@40.119.6.56 -p 50000
+The authenticity of host '[40.119.6.56]:50000 ([40.119.6.56]:50000)' can't be established.
+ECDSA key fingerprint is SHA256:eLegjdo3+XEiWphavJ0/xJtLWLENLjOeVhvcY54LpZ8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[40.119.6.56]:50000' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1050-azure x86_64)
+```
+
+## Create NCCL test container (from AML compute node)
+```bash
+$ sudo su -
+# az login
+# az account set -s AG_CI_CE_SWHPC_2_kanchanm
+# az acr login --name jzacr3
+Login Succeeded
+```
+```bash
+# git clone https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp.git
+# cd 2024-AI-GBB-Bootcamp/Docker/
+# docker build -t jzacr3.azurecr.io/aml_nccl_tests_2303:latest .
+# docker push jzacr3.azurecr.io/aml_nccl_tests_2303:latest
+```
+
+## Run NCCL `all_reduce` (from your local or VM terminal)
+```bash
 python 4_create_environment.py
 python 5_NCCL_test.py
 ```
