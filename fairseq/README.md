@@ -13,3 +13,7 @@ Login Succeeded
 # docker push jzacr3.azurecr.io/aml_fairseq_2110:latest
 ```
 
+## Create Fairseq env in AML
+```bash
+python create_environment.py
+```
