@@ -6,7 +6,7 @@
 az group create --name JZ-ACR --location francecentral
 ```
 ```bash
-az acr create --name jzacr3 \
+az acr create --name jzacr4 \
               --resource-group JZ-ACR \
               --location francecentral \
               --sku Standard \
@@ -15,11 +15,11 @@ az acr create --name jzacr3 \
 ```
 - Check ACR properties
 ```bash
-az acr show --name jzacr3 --resource-group JZ-ACR -o table
+az acr show --name jzacr4 --resource-group JZ-ACR -o table
 ```
 - Get ACR ID
 ```bash
-az acr show --name jzacr3 --resource-group JZ-ACR --query id --output tsv
+az acr show --name jzacr4 --resource-group JZ-ACR --query id --output tsv
 ```
 NOTE: You will need ACR ID in script `1_create_RG.sh`
 
