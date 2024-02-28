@@ -3,9 +3,12 @@
 ## Create Azure container registry
 - Create an Azure Container Registry
 ```bash
+az group create --name JZ-ACR --location francecentral
+```
+```bash
 az acr create --name jzacr3 \
               --resource-group JZ-ACR \
-              --location southcentralus \
+              --location francecentral \
               --sku Standard \
               --admin-enabled true \
               --public-network-enabled true
