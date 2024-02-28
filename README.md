@@ -170,7 +170,7 @@ f1d5e1df5ed649d0b9e618783ea5fdbc000000:1211:1211 [0] NCCL INFO comm 0x5634cae893
 ## References
 - [AML GPU Perf](https://github.com/Azure/azureml-examples/tree/main/cli/jobs/single-step/gpu_perf)
 - [AML Distributed GPU Training](https://azure.github.io/azureml-cheatsheets/docs/cheatsheets/python/v1/distributed-training/#mpi)
-- [AML debug-and-monitor](https://github.com/Azure/azureml-examples/blob/-dd15e3f7d6a512fedfdfbdb4be19e065e8c1d224/sdk/python/jobs/single-step/debug-and-monitor/debug-and-monitor.ipynb)
+- [AML debug-and-monitor](https://github.com/Azure/azureml-examples/blob/dd15e3f7d6a512fedfdfbdb4be19e065e8c1d224/sdk/python/jobs/single-step/debug-and-monitor/debug-and-monitor.ipynb)
 - [AML Compute Class](https://learn.microsoft.com/en-us/python/api/azure-ai-ml/azure.ai.ml.entities.amlcompute?view=azure-python)
 - [CIFAR10](https://github.com/Azure/azureml-examples/blob/main/sdk/python/jobs/single-step/pytorch/distributed-training/distributed-cifar10.ipynb)
 - [NCCL test on AKS NDmV4 VM](https://github.com/JingchaoZhang/JingchaoZhang.github.io/blob/master/_posts/2023-09-11-NCCL%20test%20on%20AKS%20NDmV4%20VM.md)
