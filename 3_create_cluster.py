@@ -29,12 +29,14 @@ cluster_ssh = AmlComputeSshSettings(
     ssh_key_value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCq5muNaAXzQa3WJXPKlQwVwRfcTsjNQEqbIecX/XxwBRXADue8N9gRXTLlXvN6UbxxI1G5b4YHz8AJJ0Exu3efpXM7Fk7siRc/w3j83gqF9wlFDb1zUWa7tuedLUwhynGXrZKGAao64FGChu7DQr4VTJEiRM3vlNGO+kGeorQ0H6ptvhn9Pn6dr6LijRIpcjKN57IrUdLx31NygZQsNBWhjVjoOe9WsP8INujZWUxA0yUJqTlimnBw+VKiIVcc2HYVNEX8bmAYMmXAYN70/iZZUjL5lWieUTtJIRLDbl6S8K7f1FotXqRRCD7JFBgnJmxQ25WCmZLZU4Tjiyb17vFHe3e2AknzHAKah5JoRx79+7sjf1gpv9SnprbYdygwLErq1pd7T+T/l4q6pbQx0C3xS00O47+dTc7YqKXyL7piiihXmFo9W0BYehjSCNEb2lSJxQoyfHjt9AiNGWhhJgmTQ4xrsvK5Ga7MV87W4ZYbfeR/NAeRMXoViKGW5FVPx88= jingchao@ms_laptop",
     )
 
+compute_size="Standard_ND96asr_v4" #"Standard_ND96amsr_A100_v4"
+
 if args.compute:
     # Code to create a compute instance
     compute_instance = ComputeInstance(
         name=cluster_name,
         type="ComputeInstance",
-        size="Standard_ND96asr_v4",  # Example size, adjust as needed
+        size=compute_size,
         ssh_public_access_enabled=True,
         ssh_settings=cluster_ssh,
         identity=identity_config)
@@ -49,12 +51,12 @@ elif args.cluster:
     cluster_basic = AmlCompute(
         name=cluster_name,
         type="amlcompute",
-        size="Standard_ND96asr_v4",
+        size=compute_size,
         ssh_public_access_enabled=True,
         ssh_settings=cluster_ssh,
-        min_instances=1,
+        min_instances=2,
         max_instances=2,
-        idle_time_before_scale_down=120,
+        idle_time_before_scale_down=7200,
         identity=identity_config)
 
     operation = ml_client.begin_create_or_update(cluster_basic)

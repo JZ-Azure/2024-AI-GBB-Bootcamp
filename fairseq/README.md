@@ -18,6 +18,11 @@ Login Succeeded
 python create_environment.py
 ```
 
+## Launch training job
+```bash
+python run_fairseq.py
+```
+
 ## Referece
 - [Running Fairseq with AML](https://github.com/JZ-Azure/fairseq_with_AML_public)
 - [AML Fairseq](https://github.com/Azure/azurehpc/tree/master/experimental/fairseq_moe_docker_slurm)
