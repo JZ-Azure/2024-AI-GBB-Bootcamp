@@ -26,7 +26,7 @@ job = command(
     instance_count=2,
     distribution={
         "type": "PyTorch",
-        "process_count_per_instance": 1,
+        "process_count_per_instance": 8,
     },
     services={
         "My_jupyterlab": JupyterLabJobService(),
