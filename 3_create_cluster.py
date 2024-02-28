@@ -54,7 +54,7 @@ elif args.cluster:
         size=compute_size,
         ssh_public_access_enabled=True,
         ssh_settings=cluster_ssh,
-        min_instances=2,
+        min_instances=1,
         max_instances=2,
         idle_time_before_scale_down=7200,
         identity=identity_config)
