@@ -54,6 +54,9 @@ Warning: Permanently added '[40.119.6.56]:50000' (ECDSA) to the list of known ho
 Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1050-azure x86_64)
 ```
 
+**NOTE: **In script `3_create_cluster.py`, if the `min_instances` == `max_instances` == 2, I got the following error scaling:  
+![image](https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp/assets/6353250/1ac5a4b3-209f-4146-b619-1ac790c57e16)
+
 ## Create NCCL test container (from AML compute node)
 ```bash
 $ sudo su -
@@ -68,9 +71,6 @@ Login Succeeded
 # docker build -t jzacr3.azurecr.io/aml_nccl_tests_2303:latest .
 # docker push jzacr3.azurecr.io/aml_nccl_tests_2303:latest
 ```
-
-In script `3_create_cluster.py`, if the `min_instances` == `max_instances` == 2, I got the following error scaling:
-![image](https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp/assets/6353250/1ac5a4b3-209f-4146-b619-1ac790c57e16)
 
 ## Run NCCL `all_reduce` (from your local or VM terminal)
 ```bash
