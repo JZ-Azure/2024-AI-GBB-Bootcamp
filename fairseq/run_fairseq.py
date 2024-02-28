@@ -23,10 +23,11 @@ job = command(
     command="bash launch_fairseq.py",
     compute=cluster_name,
     environment="Fairseq-Env:1.0",
-    instance_count=1,
-    distribution=MpiDistribution(
-        process_count_per_instance=8,
-    ),
+    instance_count=2,
+    distribution={
+        "type": "PyTorch",
+        "process_count_per_instance": 1,
+    },
     services={
         "My_jupyterlab": JupyterLabJobService(),
         "My_vscode": VsCodeJobService(),

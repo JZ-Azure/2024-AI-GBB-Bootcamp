@@ -17,3 +17,6 @@ Login Succeeded
 ```bash
 python create_environment.py
 ```
+
+## Referece
+- [AML Fairseq](https://github.com/Azure/azurehpc/tree/master/experimental/fairseq_moe_docker_slurm)
