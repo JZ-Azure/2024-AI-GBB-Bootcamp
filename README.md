@@ -71,7 +71,7 @@ Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1050-azure x86_64)
 ```bash
 $ sudo su -
 # az login
-# az account set -s AG_CI_CE_SWHPC_2_kanchanm
+# az account set --subscription 0988137f-9fcd-4e36-b99f-e5b3f35b28db
 # az acr login --name jzacr3
 Login Succeeded
 ```
