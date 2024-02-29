@@ -1,5 +1,4 @@
 export NCCL_DEBUG=INFO
-export UCX_TLS=tcp
 export UCX_NET_DEVICES=eth0
 export NCCL_SOCKET_IFNAME=eth0
 export CUDA_DEVICE_ORDER=PCI_BUS_ID
@@ -7,7 +6,7 @@ export NCCL_IB_PCI_RELAXED_ORDERING=1
 export NCCL_TOPO_FILE=/opt/microsoft/ndv4-topo.xml
 
 cd /workspace/fairseq
-python train.py \
+python -m torch.distributed.launch --nproc_per_node 8 --nnodes 1 train.py \
     --save-dir ./ \
     --ddp-backend fully_sharded \
     --memory-efficient-fp16 \
