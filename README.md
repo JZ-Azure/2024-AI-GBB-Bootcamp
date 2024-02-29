@@ -21,25 +21,30 @@ pip install azure-identity
 ```
 
 ## Create Azure container registry
-- Create an Azure Container Registry
+- Create an Azure Container Registry (ACR)
 ```bash
-az group create --name JZ-ACR --location francecentral
+export ACR_RG=JZ-ACR
+export ACR_NAME=jzacr4
+export LOCATION=francecentral
 ```
 ```bash
-az acr create --name jzacr4 \
-              --resource-group JZ-ACR \
-              --location francecentral \
+az group create --name $ACR_RG --location $LOCATION
+```
+```bash
+az acr create --name $ACR_NAME \
+              --resource-group $ACR_RG \
+              --location $LOCATION \
               --sku Standard \
               --admin-enabled true \
               --public-network-enabled true
 ```
 - Check ACR properties
 ```bash
-az acr show --name jzacr4 --resource-group JZ-ACR -o table
+az acr show --name $ACR_NAME --resource-group $ACR_RG -o table
 ```
 - Get ACR ID
 ```bash
-az acr show --name jzacr4 --resource-group JZ-ACR --query id --output tsv
+az acr show --name $ACR_NAME --resource-group $ACR_RG --query id --output tsv
 ```
 NOTE: You will need ACR ID in script `1_create_RG.sh`
 
