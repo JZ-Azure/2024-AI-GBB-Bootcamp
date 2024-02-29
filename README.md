@@ -1,5 +1,25 @@
 # AI-GBB-Bootcamp: AML hands-on
 
+## Clone this repo to your local terminal or VM
+```
+git clone https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp.git
+```
+
+## Install AML Python SDK v2 in a conda env
+```bash
+conda env create -f azureml_env.yml
+```
+Activate the conda env
+```bash
+conda activate azureml
+```
+
+Alternatively, you can [install the SDK](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-ml-readme?view=azure-python) directly without conda. 
+```bash
+pip install azure-ai-ml
+pip install azure-identity
+```
+
 ## Create Azure container registry
 - Create an Azure Container Registry
 ```bash
@@ -22,21 +42,6 @@ az acr show --name jzacr4 --resource-group JZ-ACR -o table
 az acr show --name jzacr4 --resource-group JZ-ACR --query id --output tsv
 ```
 NOTE: You will need ACR ID in script `1_create_RG.sh`
-
-## Install AML Python SDK v2 in a conda env
-```bash
-conda env create -f azureml_env.yml
-```
-Activate the conda env
-```bash
-conda activate azureml
-```
-
-Alternatively, you can [install the SDK](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-ml-readme?view=azure-python) directly without conda. 
-```bash
-pip install azure-ai-ml
-pip install azure-identity
-```
 
 ## Create AML compute cluster
 ```bash
